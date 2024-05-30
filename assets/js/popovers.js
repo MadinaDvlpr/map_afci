@@ -1,7 +1,7 @@
 // Sélection de tous les éléments avec la classe '.ville'
 var villes = document.querySelectorAll('.ville');
 
-// Création un élément div pour le popover
+// Création d'un élément div pour le popover
 var popover = document.createElement('div');
 
 // Ajout de la classe 'popover' à l'élément div popover
@@ -19,7 +19,7 @@ function showPopoverOnHover(ville, event) {
 	const emailCentre = ville.getAttribute('data-email');
 	const address = ville.getAttribute('data-address');
 	const phone = ville.getAttribute('data-tel');
-	const centerSlug = ville.getAttribute('data-slug');
+	const center = ville.getAttribute('data-slug');
 
 	// Déclaration du contenu HTML du popover avec les données obtenues
 	popover.innerHTML = `
@@ -29,7 +29,7 @@ function showPopoverOnHover(ville, event) {
         <p class="popover-email"><strong>Email:</strong> ${emailCentre}</p>
         <p><strong>Contact:</strong> ${contactName}</p>
        <!-- <p><strong>Détails:</strong> ${details}</p>-->
-		 <!--<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> Lien vers la page spécifique du centre -->
+		 <!--<a href="${center}-afci.html" class="btn btn-primary">Découvrir</a> Lien vers la page spécifique du centre -->
     `;
 
 	// Positionner le popover près de l'élément survolé
@@ -54,6 +54,11 @@ function showPopoverOnHover(ville, event) {
 
 	// Afficher le popover en le rendant visible
 	popover.style.display = 'block';
+
+	//Animer le picto
+	const picto = ville.querySelector('#picto${center}');
+	picto.classList.add('zoom-in');
+	picto.classList.remove('zoom-out');
 }
 
 // Fonction pour masquer le popover lorsque le curseur quitte la zone de survol
@@ -65,6 +70,7 @@ function hidePopoverOnLeave() {
 villes.forEach((ville) => {
 	ville.addEventListener('mouseover', function (event) {
 		showPopoverOnHover(ville, event);
+		// animation de zoom sur picto
 	});
 
 	ville.addEventListener('mouseout', function (event) {

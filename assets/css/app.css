@@ -84,6 +84,7 @@ main {
 	padding: 10px;
 	border-radius: 5px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	font-size: 17px;
 }
 
 .popover h4,
@@ -91,10 +92,34 @@ main {
 	color: #009fe3;
 }
 
-.zoom-in {
-	transition: transform 0.3s ease;
+/* Animation de zoom */
+/Animation de zoom / @keyframes zoomIn {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.1);
+	}
 }
 
-.zoom-in:hover {
-	transform: scale(1.1); /* Zoom de 10% au survol */
+@keyframes zoomOut {
+	from {
+		transform: scale(1.1);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.zoom-in {
+	animation: zoomIn 0.3s forwards;
+}
+
+.zoom-out {
+	animation: zoomOut 0.3s forwards;
+}
+
+/* Assurez-vous que les éléments picto aient le transform origin */
+.picto {
+	transform-origin: center;
 }
