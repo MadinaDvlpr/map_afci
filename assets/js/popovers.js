@@ -56,9 +56,9 @@ function showPopoverOnHover(ville, event) {
 	popover.style.display = 'block';
 
 	//Animer le picto
-	const picto = ville.querySelector('#picto${center}');
-	picto.classList.add('zoom-in');
-	picto.classList.remove('zoom-out');
+	// const picto = ville.querySelector('#picto${center}');
+	// picto.classList.add('zoom-in');
+	// picto.classList.remove('zoom-out');
 }
 
 // Fonction pour masquer le popover lorsque le curseur quitte la zone de survol
