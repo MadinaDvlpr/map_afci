@@ -10,8 +10,8 @@ popover.classList.add('popover');
 // Ajouter l'élément popover au corps du document
 document.body.appendChild(popover);
 
-// Fonction pour afficher le popover
-function showPopover(ville, event) {
+// Fonction pour afficher le popover au survol
+function showPopoverOnHover(ville, event) {
 	// Obtenir les attributs data-* de l'élément '.ville'
 	const name = ville.getAttribute('data-name');
 	const details = ville.getAttribute('data-details');
@@ -30,11 +30,9 @@ function showPopover(ville, event) {
         <p><strong>Contact:</strong> ${contactName}</p>
         <p><strong>Détails:</strong> ${details}</p>
 		<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> <!-- Lien vers la page spécifique du centre -->
-
     `;
-	console.log(centerSlug);
 
-	// Positionner le popover près de l'élément cliqué
+	// Positionner le popover près de l'élément survolé
 	const popoverWidth = popover.offsetWidth;
 	const popoverHeight = popover.offsetHeight;
 	const pageWidth = window.innerWidth;
@@ -58,17 +56,18 @@ function showPopover(ville, event) {
 	popover.style.display = 'block';
 }
 
-// Parcourir tous les éléments '.ville' et ajouter un événement de clic à chacun
-villes.forEach((ville) => {
-	ville.addEventListener('click', function (event) {
-		event.preventDefault();
-		showPopover(ville, event);
-	});
-});
+// Fonction pour masquer le popover lorsque le curseur quitte la zone de survol
+function hidePopoverOnLeave() {
+	popover.style.display = 'none';
+}
 
-// Ajouter un événement pour cacher le popover lorsqu'on clique en dehors
-document.addEventListener('click', function (event) {
-	if (!popover.contains(event.target) && !event.target.closest('.ville')) {
-		popover.style.display = 'none';
-	}
+// Parcourir tous les éléments '.ville' et ajouter des événements de survol
+villes.forEach((ville) => {
+	ville.addEventListener('mouseover', function (event) {
+		showPopoverOnHover(ville, event);
+	});
+
+	ville.addEventListener('mouseout', function (event) {
+		hidePopoverOnLeave();
+	});
 });
