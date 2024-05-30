@@ -19,6 +19,7 @@ function showPopover(ville, event) {
 	const emailCentre = ville.getAttribute('data-email');
 	const address = ville.getAttribute('data-address');
 	const phone = ville.getAttribute('data-tel');
+	const centerSlug = ville.getAttribute('data-slug');
 
 	// Définir le contenu HTML du popover avec les données obtenues
 	popover.innerHTML = `
@@ -28,6 +29,8 @@ function showPopover(ville, event) {
         <p><strong>Email:</strong> ${emailCentre}</p>
         <p><strong>Contact:</strong> ${contactName}</p>
         <p><strong>Détails:</strong> ${details}</p>
+		<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> <!-- Lien vers la page spécifique du centre -->
+
     `;
 
 	// Positionner le popover près de l'élément cliqué
