@@ -1,18 +1,18 @@
-// Sélectionner tous les éléments avec la classe '.ville'
+// Sélection de tous les éléments avec la classe '.ville'
 var villes = document.querySelectorAll('.ville');
 
-// Créer un élément div pour le popover
+// Création un élément div pour le popover
 var popover = document.createElement('div');
 
-// Ajouter la classe 'popover' à l'élément div popover
+// Ajout de la classe 'popover' à l'élément div popover
 popover.classList.add('popover');
 
-// Ajouter l'élément popover au corps du document
+// Ajout de l'élément popover au corps du document
 document.body.appendChild(popover);
 
 // Fonction pour afficher le popover au survol
 function showPopoverOnHover(ville, event) {
-	// Obtenir les attributs data-* de l'élément '.ville'
+	// Recup les attributs data de l'élément '.ville'
 	const name = ville.getAttribute('data-name');
 	const details = ville.getAttribute('data-details');
 	const contactName = ville.getAttribute('data-contact');
@@ -21,14 +21,14 @@ function showPopoverOnHover(ville, event) {
 	const phone = ville.getAttribute('data-tel');
 	const centerSlug = ville.getAttribute('data-slug');
 
-	// Définir le contenu HTML du popover avec les données obtenues
+	// Déclaration du contenu HTML du popover avec les données obtenues
 	popover.innerHTML = `
         <h4>${name}</h4>
         <p><strong>Adresse:</strong> ${address}</p>
         <p><strong>Téléphone:</strong> ${phone}</p>
         <p class="popover-email"><strong>Email:</strong> ${emailCentre}</p>
         <p><strong>Contact:</strong> ${contactName}</p>
-        <p><strong>Détails:</strong> ${details}</p>
+       <!-- <p><strong>Détails:</strong> ${details}</p>-->
 		 <!--<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> Lien vers la page spécifique du centre -->
     `;
 
