@@ -26,10 +26,10 @@ function showPopoverOnHover(ville, event) {
         <h4>${name}</h4>
         <p><strong>Adresse:</strong> ${address}</p>
         <p><strong>Téléphone:</strong> ${phone}</p>
-        <p><strong>Email:</strong> ${emailCentre}</p>
+        <p class="popover-email"><strong>Email:</strong> ${emailCentre}</p>
         <p><strong>Contact:</strong> ${contactName}</p>
         <p><strong>Détails:</strong> ${details}</p>
-		<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> <!-- Lien vers la page spécifique du centre -->
+		 <!--<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> Lien vers la page spécifique du centre -->
     `;
 
 	// Positionner le popover près de l'élément survolé
