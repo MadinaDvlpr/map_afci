@@ -37,14 +37,13 @@
 
 ## Description
 
-MapAFCI is an interactive web mapping application designed to help users explore tourist attractions in the Madina region. The application provides detailed information about attractions, restaurants, hotels, and more.
+MapAFCI is an interactive web mapping application designed for AFCI.
 
 ## Features
 
 -   Interactive map display with markers for points of interest.
--   Filtering of places by category (attractions, restaurants, hotels, etc.).
--   Display of place details, including photos, descriptions, and reviews.
--   Ability to search for specific places.
+-   Display of contact details, including email, phone, and names.
+-   Ability to search for specific areas.
 -   User-friendly and responsive interface.
 
 ## Screenshots
