@@ -32,6 +32,7 @@ function showPopover(ville, event) {
 		<a href="${centerSlug}-afci.html" class="btn btn-primary">Découvrir</a> <!-- Lien vers la page spécifique du centre -->
 
     `;
+	console.log(centerSlug);
 
 	// Positionner le popover près de l'élément cliqué
 	const popoverWidth = popover.offsetWidth;
